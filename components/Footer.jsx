@@ -1,6 +1,9 @@
+// Importar el componente Link de Next.js para enlaces
 import Link from 'next/link'
+// Importar los iconos de Github y LinkedIn desde React Icons
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
+// Componente Footer para el pie de página
 const Footer = () => {
   return (
     <footer className="relative mt-auto bg-primary flex flex-col items-center py-3 gap-2 md:flex-row md:justify-evenly">
@@ -26,4 +29,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer // Exportar el componente Footer

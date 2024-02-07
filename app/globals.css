@@ -1,22 +1,29 @@
+/* Importar estilos de Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos globales */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Estilos para elementos select */
 select {
-  outline: none;
-  border: none;
+  outline: none; /* Eliminar borde de enfoque */
+  border: none; /* Eliminar borde predeterminado */
 }
+
+/* Estilos para el cuerpo del documento */
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  min-width: 300px;
+  min-width: 300px; /* Ancho mínimo del cuerpo */
 }
 
+/* Variables personalizadas */
 :root {
   --color-primary: #4f46e5; /* Azul primario */
   --color-secondary: #febb02; /* Amarillo secundario */
