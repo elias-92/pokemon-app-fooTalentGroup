@@ -37,10 +37,10 @@ const DetailsPokemons = async ({ params }) => {
       {/* Botón para regresar a la página principal */}
       <Link href="/">
         <button className="bg-primary mb-5 hover:bg-blue-700 font-bold py-2 px-4 rounded mt-4 inline-block">
-          Volver a la página principal
+          Back to Home
         </button>
       </Link>
-      <h1 className="text-3xl font-bold mb-4 text-center">Detalles del Pokémon</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">Pokémon Details</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="border rounded-md p-4">
           <Image
@@ -55,12 +55,12 @@ const DetailsPokemons = async ({ params }) => {
         {/* Sección para mostrar los detalles del Pokémon */}
         <div className="border rounded-md p-4 gap-1">
           <p className="text-lg font-semibold">
-            Nombre:{' '}
+            Name:
             {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1).toLowerCase()}
           </p>
-          <p className="text-lg">Altura: {pokemonData.height} Mts</p>
-          <p className="text-lg">Peso: {pokemonData.weight} Kg</p>
-          <p className="text-lg">Orden: {pokemonData.order}</p>
+          <p className="text-lg">Height: {pokemonData.height} Mts</p>
+          <p className="text-lg">Weight: {pokemonData.weight} Kg</p>
+          <p className="text-lg">Order: {pokemonData.order}</p>
         </div>
       </div>
     </div>
