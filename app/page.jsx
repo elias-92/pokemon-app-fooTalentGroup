@@ -7,13 +7,14 @@ async function getPokemons() {
     const pokemonList = response.data.results
     const pokemonPromises = pokemonList.map(async (pokemon) => {
       const response = await axios.get(pokemon.url)
-      const { height, weight, sprites, id } = response.data
+      const { height, weight, sprites, id, order } = response.data
       return {
         ...pokemon,
         id,
         height,
         weight,
-        sprites
+        sprites,
+        order
       }
     })
     const pokemonsWithInfo = await Promise.all(pokemonPromises)

@@ -8,7 +8,8 @@ async function getPokemonById(id) {
       name: response.data.name,
       height: response.data.height,
       weight: response.data.weight,
-      sprites: response.data.sprites
+      sprites: response.data.sprites,
+      order: response.data.order
     }
     return pokemonData
   } catch (error) {
@@ -16,7 +17,6 @@ async function getPokemonById(id) {
     return {}
   }
 }
-
 const DetailsPokemons = async ({ params }) => {
   const pokemonData = await getPokemonById(params.id)
 
@@ -41,10 +41,12 @@ const DetailsPokemons = async ({ params }) => {
         </div>
         <div className="border rounded-md p-4 gap-1">
           <p className="text-lg font-semibold">
-            Name: {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1).toLowerCase()}
+            Name:
+            {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1).toLowerCase()}
           </p>
           <p className="text-lg">Height: {pokemonData.height} Mts</p>
           <p className="text-lg">Weight: {pokemonData.weight} Kg</p>
+          <p className="text-lg">Order: {pokemonData.order}</p>
         </div>
       </div>
     </div>

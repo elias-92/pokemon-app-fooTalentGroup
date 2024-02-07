@@ -17,16 +17,21 @@ const PokemonCard = ({ pokemons }) => {
   }
 
   const sortedPokemons = [...pokemons].sort((a, b) => {
-    if (sortBy) {
+    if (sortBy === 'order') {
+      if (sortOrder === 'asc') {
+        return a.order - b.order
+      } else {
+        return b.order - a.order
+      }
+    } else {
       if (sortOrder === 'asc') {
         return a[sortBy] > b[sortBy] ? 1 : -1
       } else {
         return b[sortBy] > a[sortBy] ? 1 : -1
       }
-    } else {
-      return 0
     }
   })
+  console.log(sortedPokemons)
   return (
     <div className="container mx-auto p-4">
       <div>
@@ -43,6 +48,7 @@ const PokemonCard = ({ pokemons }) => {
             >
               Sort by...
             </option>
+            <option value="order">Sort by Order</option>
             <option value="name">Sort by Name</option>
             <option value="weight">Sort by Weight</option>
             <option value="height">Sort by Height</option>
@@ -67,7 +73,10 @@ const PokemonCard = ({ pokemons }) => {
               href={`/details/${pokemon.id}`}
               key={pokemon.id}
             >
-              <div className="border rounded-md p-4 cursor-pointer hover:bg-primary hover:border-secondary transition duration-300">
+              <div className="relative border rounded-md p-4 cursor-pointer hover:bg-primary hover:border-secondary transition duration-300">
+                <div className="absolute top-2 left-2 bg-gray-500 text-text rounded-full px-2 z-10">
+                  {pokemon.order}
+                </div>
                 <Image
                   src={pokemon.sprites.front_default}
                   alt=" front default"
